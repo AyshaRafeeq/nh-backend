@@ -8,14 +8,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "student")
+@Table(name = "testmarks")
 public class Data {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
 	@Column
 	private String uname;
 	@Column
+	private Integer testid;
+	@Column
 	private Integer marks;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getTestid() {
+		return testid;
+	}
+	public void setTestid(Integer testid) {
+		this.testid = testid;
+	}
 	public String getUname() {
 		return uname;
 	}
@@ -30,7 +47,7 @@ public class Data {
 	}
 	@Override
 	public String toString() {
-		return "Data [Username=" + uname + ", marks="
+		return "Data [Testid=" + testid + ",Username=" + uname + ", marks="
 				+ marks + "]";
 	}
 }
