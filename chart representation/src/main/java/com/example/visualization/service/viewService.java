@@ -14,7 +14,17 @@ public class viewService{
 	@Autowired 
 	private dataDAO dao; 
 	
-	public List<Data> getAllUsers() {
-		return dao.findAll();
+	public List<Data> getStudentsbyid(Integer id) {
+		List<Data> list = dao.findStudentsbyid(id);
+		return list;
+	}
+	
+	public List<Data> getStudentsbyname(String name) {
+		List<Data> list = dao.findStudentsbyname(name);
+		return list;
+	}
+	
+	public List<String> getAllStudents() {
+		return dao.findAllStudents();
 	}
 }
